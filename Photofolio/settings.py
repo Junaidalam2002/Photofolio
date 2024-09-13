@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
-
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -79,18 +79,22 @@ WSGI_APPLICATION = 'Photofolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'restapi_test',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD':'1245',
-        'HOST': 'localhost'
+        'PASSWORD': 'xOxMlScBBfUxVBCzywOxwZGiwHmFKxJX',
+        'HOST': 'junction.proxy.rlwy.net',
+        'PORT': '16038',
     }
 }
 
-database_url = os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.parse(database_url)
+
+# database_url = os.environ.get("DATABASE_URL")
+# DATABASES["default"] = dj_database_url.parse(database_url)
 
 
 
